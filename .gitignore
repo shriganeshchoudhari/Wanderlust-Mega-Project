@@ -1,0 +1,26 @@
+node_modules/
+.env
+.DS_Store
+public/system/
+tmp/
+log/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*tfplan*
+*.tfvars
+
+# Keys
+terra-key
+terra-key.pub
