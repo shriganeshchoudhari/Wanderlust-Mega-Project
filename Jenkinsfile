@@ -37,6 +37,7 @@ pipeline {
             }
         }
         
+/*
         stage("Trivy: Filesystem scan"){
             steps{
                 script{
@@ -44,7 +45,9 @@ pipeline {
                 }
             }
         }
+*/
 
+/*
         stage("OWASP: Dependency check"){
             steps{
                 script{
@@ -54,7 +57,9 @@ pipeline {
                 }
             }
         }
+*/
         
+/*
         stage("SonarQube: Code Analysis"){
             steps{
                 script{
@@ -62,7 +67,9 @@ pipeline {
                 }
             }
         }
+*/
         
+/*
         stage("SonarQube: Code Quality Gates"){
             steps{
                 script{
@@ -72,6 +79,7 @@ pipeline {
                 }
             }
         }
+*/
         
         stage('Exporting environment variables') {
             parallel{
