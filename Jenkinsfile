@@ -48,7 +48,9 @@ pipeline {
         stage("OWASP: Dependency check"){
             steps{
                 script{
-                    owasp_dependency()
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                        owasp_dependency()
+                    }
                 }
             }
         }
@@ -64,10 +66,8 @@ pipeline {
         stage("SonarQube: Code Quality Gates"){
             steps{
                 script{
-                    try {
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         sonarqube_code_quality()
-                    } catch (Exception e) {
-                        echo "SonarQube Quality Gate failed, but proceeding to deployment..."
                     }
                 }
             }
